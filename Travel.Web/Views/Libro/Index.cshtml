@@ -1,0 +1,50 @@
+﻿@model List<Travel.Core.Entities.Libro>
+
+<h1>Autores</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo Libro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Titulo
+            </th>
+            <th>
+                Sinopsis
+            </th>
+            <th>
+                Numero paginas
+            </th>
+            <th>
+                Editorial
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinopsis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NPaginas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Editoriales)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Isbn">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Isbn">Detalle</a> |
+                <a asp-action="Delete" asp-route-id="@item.Isbn">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+© 2022 GitHub, Inc.

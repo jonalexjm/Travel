@@ -1,13 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Travel.Infrastructure.Extensions;
+using Travel.Web.Helpers;
 
 namespace Travel.Web
 {
@@ -24,6 +21,10 @@ namespace Travel.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContexts(Configuration);
+            services.AddServices();
+            services.AddTransient<IComboBoxHelper, ComboBoxHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
