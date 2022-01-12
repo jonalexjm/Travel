@@ -1,6 +1,6 @@
-#Proyecto desarrollado en .net Core 5
+# Proyecto desarrollado en .net Core 5
 
-##Pasos para ejecutar la app
+## Pasos para ejecutar la app
 
 1. Clonar el proyecto en su equipo local
 2. Ejecutar el archivo TravelDb.sql en una base de datos SQL Server 
