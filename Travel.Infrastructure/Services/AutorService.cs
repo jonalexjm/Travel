@@ -70,5 +70,18 @@ namespace Travel.Infrastructure.Services
 
             return false;
         }
+
+        /// <summary>
+        /// Método para eliminar Autor
+        /// </summary>
+        /// <param name="autor"> Objeto property a eliminar </param>
+        /// <returns> Retorna resutlado de operacion true</returns>
+        public async Task<bool> DeleteProperty(Autor autor)
+        {
+            await _unitOfWork.AutorRepository.DeleteAsync(autor);
+
+            return true;
+        }
+
     }
 }

@@ -77,5 +77,28 @@ namespace Travel.Web.Controllers
             }
             return View(editorial);
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {            
+
+            var editorial = await _editorialService.ObtenerEditorial(id);
+
+            if (editorial == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                var response = await _editorialService.DeleteEditorial(editorial);
+                //_flashMessage.Confirmation("The category was deleted.");
+            }
+            catch
+            {
+                //_flashMessage.Danger("The category can't be deleted because it has related records.");
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

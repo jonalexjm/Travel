@@ -9,7 +9,7 @@ namespace Travel.Web.Controllers
     public class AutorController : Controller
     {
         private readonly IAutorService _autorService;
-        //private readonly IMapper _mapper;
+        
         public AutorController(IAutorService autorService)
         {
             _autorService = autorService;
@@ -77,6 +77,34 @@ namespace Travel.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(autor);
+        }
+
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var autor = await _autorService.ObtenerAutor(id);
+            
+            if (autor == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                var response = await _autorService.DeleteProperty(autor);
+                //_flashMessage.Confirmation("The category was deleted.");
+            }
+            catch
+            {
+                //_flashMessage.Danger("The category can't be deleted because it has related records.");
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
 

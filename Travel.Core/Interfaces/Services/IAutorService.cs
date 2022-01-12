@@ -37,6 +37,14 @@ namespace Travel.Core.Interfaces.Services
         /// <param name="autor"> Objeto property para actualizar </param>
         /// <returns> Retorna resutlado de operacion true o false</returns>
         Task<bool> ActualizarAutor(Autor autor);
-       
+
+        /// <summary>
+        /// Método para eliminar Autor
+        /// </summary>
+        /// <param name="autor"> Objeto property a eliminar </param>
+        /// <returns> Retorna resutlado de operacion true</returns>
+        Task<bool> DeleteProperty(Autor autor);
+
+
     }
 }

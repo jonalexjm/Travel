@@ -41,8 +41,7 @@ namespace Travel.Infrastructure.Services
             return  _unitOfWork.AutoresHasLibroRepository
                                                          .GetAll()
                                                          .Where(l => l.LibrosIsbn == idLibros)
-                                                         .ToList();
-            //autorHasLibroPorLibro = autorHasLibroPorLibro.Where(l => l.LibrosIsbn == idLibros).ToList();
+                                                         .ToList();            
         }
 
         /// <summary>

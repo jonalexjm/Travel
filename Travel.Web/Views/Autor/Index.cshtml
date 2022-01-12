@@ -27,12 +27,26 @@
                 @Html.DisplayFor(modelItem => item.Apellidos)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Detalle</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |                
                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-© 2022 GitHub, Inc.
+
+<partial name="_DeleteDialog" />
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="/js/deleteDialog.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+            // Delete item
+            sc_deleteDialog.openModal('deleteItem', true, 'btnYesDelete', '/Categories/Delete/', false);
+        });
+    </script>
+}

@@ -19,6 +19,12 @@ namespace Travel.Infrastructure.Services
             _unitOfWork = unitOfWork;
         }
         #endregion
+
+        /// <summary>
+        /// Método para actualizar Editorial
+        /// </summary>
+        /// <param name="editorial">Objeto editorial para actualizar</param>
+        /// <returns> Retorna resultado de operacion true o false</returns>
         public async Task<bool> ActualizarEditorial(Editorial editorial)
         {
             var editorialResultado = await _unitOfWork.EditorialRepository.GetById(editorial.Id);
@@ -34,20 +40,47 @@ namespace Travel.Infrastructure.Services
             return false;
         }
 
+        /// <summary>
+        /// Método para crear Autor
+        /// </summary>
+        /// <param name="Editorial"> Objeto con la información de editorial </param>
+        /// <returns></returns>
         public async Task CrearEditorial(Editorial editorial)
         {
             await _unitOfWork.EditorialRepository.Add(editorial);
             await _unitOfWork.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Método para obtener editorial con id
+        /// </summary>
+        /// <param name="id"> Id property </param>
+        /// <returns></returns>
         public async Task<Editorial> ObtenerEditorial(int id)
         {
             return await this._unitOfWork.EditorialRepository.GetById(id);
         }
 
+        /// <summary>
+        /// Método para consultar todos los Editoriales
+        /// </summary>
+        /// <param> </param>
+        /// <returns> Objeto paginado con el resultado de la consulta </returns>
         public async Task<List<Editorial>> ObtenerEditoriales()
         {
             return  this._unitOfWork.EditorialRepository.GetAll().ToList();
+        }
+
+        /// <summary>
+        /// Método para eliminar Editorial
+        /// </summary>
+        /// <param name="autor"> Objeto Editorial a eliminar </param>
+        /// <returns> Retorna resutlado de operacion true</returns>
+        public async Task<bool> DeleteEditorial(Editorial editorial)
+        {
+            await _unitOfWork.EditorialRepository.DeleteAsync(editorial);
+
+            return true;
         }
     }
 }

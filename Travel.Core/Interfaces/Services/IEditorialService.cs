@@ -37,5 +37,12 @@ namespace Travel.Core.Interfaces.Services
         /// <param name="editorial"> Objeto property para actualizar </param>
         /// <returns> Retorna resutlado de operacion true o false</returns>
         Task<bool> ActualizarEditorial(Editorial editorial);
+
+        /// <summary>
+        /// Método para eliminar Editorial
+        /// </summary>
+        /// <param name="autor"> Objeto Editorial a eliminar </param>
+        /// <returns> Retorna resutlado de operacion true</returns>
+        Task<bool> DeleteEditorial(Editorial editorial);
     }
 }
