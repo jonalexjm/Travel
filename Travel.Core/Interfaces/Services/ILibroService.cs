@@ -38,7 +38,18 @@ namespace Travel.Core.Interfaces.Services
         /// <returns> Retorna resutlado de operacion true o false</returns>
         Task<bool> ActualizarLibro(Libro libro);
 
+        /// <summary>
+        /// Método para obtener libros con editoriales
+        /// </summary>
+        /// <param> </param>
+        /// <returns> Lista de editoriales </returns>
         Task<List<Libro>> ObtenerLibrosConEditoriales();
+
+        /// <summary>
+        /// Método para obtener un libro con editoriales
+        /// </summary>
+        /// <param> </param>
+        /// <returns> Libro con editoriales </returns>
         Task<Libro> ObtenerLibroConEditoriales(int isbn);
     }
 }

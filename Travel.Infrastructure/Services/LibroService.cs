@@ -62,6 +62,11 @@ namespace Travel.Infrastructure.Services
             return await this._unitOfWork.LibroRepository.GetById(id);
         }
 
+        /// <summary>
+        /// Método para obtener un libro con editoriales
+        /// </summary>
+        /// <param> </param>
+        /// <returns> Libro con editoriales </returns>
         public Task<Libro> ObtenerLibroConEditoriales(int isbn)
         {
             return this._unitOfWork.LibroRepository.ObtenerLibroConEditoriales(isbn);
@@ -77,6 +82,11 @@ namespace Travel.Infrastructure.Services
             return this._unitOfWork.LibroRepository.GetAll().ToList();
         }
 
+        /// <summary>
+        /// Método para obtener libros con editoriales
+        /// </summary>
+        /// <param> </param>
+        /// <returns> Lista de editoriales </returns>
         public Task<List<Libro>> ObtenerLibrosConEditoriales()
         {
             return this._unitOfWork.LibroRepository.ObtenerLibrosConEditoriales();

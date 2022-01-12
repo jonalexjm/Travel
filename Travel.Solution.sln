@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travel.Core", "Travel.Core\Travel.Core.csproj", "{664BB769-8B31-49F0-8EC1-40123F3A003D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travel.Core", "Travel.Core\Travel.Core.csproj", "{664BB769-8B31-49F0-8EC1-40123F3A003D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travel.Infrastructure", "Travel.Infrastructure\Travel.Infrastructure.csproj", "{B99B2936-9B1C-429F-9B70-94A8F7004F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travel.Infrastructure", "Travel.Infrastructure\Travel.Infrastructure.csproj", "{B99B2936-9B1C-429F-9B70-94A8F7004F37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Travel.UI", "Travel.UI", "{DCC65E07-B5FB-4E06-9E86-042DB4E4AAC8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Travel.Test", "Travel.Test", "{935EB4A4-1C6E-423B-A91A-015C07ACDDAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travel.Application", "Travel.Application\Travel.Application.csproj", "{C508D6A3-CED6-411E-ACB5-3CF43C8F9A91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travel.Web", "Travel.Web\Travel.Web.csproj", "{49E0F587-56BA-4670-98FC-104C90D7E5EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travel.Web", "Travel.Web\Travel.Web.csproj", "{49E0F587-56BA-4670-98FC-104C90D7E5EC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{2D44DF1C-C82C-46E4-9199-8157A7558FE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travel.UnitTest", "Travel.UnitTest\Travel.UnitTest.csproj", "{B76E574D-F91B-4241-9378-246E3ED95649}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,20 +31,22 @@ Global
 		{B99B2936-9B1C-429F-9B70-94A8F7004F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B99B2936-9B1C-429F-9B70-94A8F7004F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B99B2936-9B1C-429F-9B70-94A8F7004F37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C508D6A3-CED6-411E-ACB5-3CF43C8F9A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C508D6A3-CED6-411E-ACB5-3CF43C8F9A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C508D6A3-CED6-411E-ACB5-3CF43C8F9A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C508D6A3-CED6-411E-ACB5-3CF43C8F9A91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{49E0F587-56BA-4670-98FC-104C90D7E5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49E0F587-56BA-4670-98FC-104C90D7E5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49E0F587-56BA-4670-98FC-104C90D7E5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49E0F587-56BA-4670-98FC-104C90D7E5EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B76E574D-F91B-4241-9378-246E3ED95649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76E574D-F91B-4241-9378-246E3ED95649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76E574D-F91B-4241-9378-246E3ED95649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76E574D-F91B-4241-9378-246E3ED95649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{49E0F587-56BA-4670-98FC-104C90D7E5EC} = {DCC65E07-B5FB-4E06-9E86-042DB4E4AAC8}
+		{2D44DF1C-C82C-46E4-9199-8157A7558FE2} = {935EB4A4-1C6E-423B-A91A-015C07ACDDAD}
+		{B76E574D-F91B-4241-9378-246E3ED95649} = {935EB4A4-1C6E-423B-A91A-015C07ACDDAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C16A0F7-4CB1-435C-A705-EB7156241811}
