@@ -13,7 +13,7 @@ namespace Travel.Infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<AutoresHasLibro> builder)
         {
-            builder.HasNoKey();
+            //builder.HasNoKey();
 
             builder.ToTable("autores_has_libros");
 

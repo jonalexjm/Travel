@@ -18,6 +18,14 @@ namespace Travel.Infrastructure.Repositories
             travelDbContext = context;
         }
 
+        public async  Task<Libro> ObtenerLibroConEditoriales(int isbn)
+        {
+            return await travelDbContext.Libros
+                                        .Where(l => l.Isbn == isbn)
+                                        .Include(e => e.EditorialesNavigation)
+                                        .FirstOrDefaultAsync();
+        }
+
         public async Task<List<Libro>> ObtenerLibrosConEditoriales()
         {
             return await travelDbContext.Libros.Include(e => e.EditorialesNavigation).ToListAsync();

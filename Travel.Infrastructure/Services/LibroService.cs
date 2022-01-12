@@ -62,6 +62,11 @@ namespace Travel.Infrastructure.Services
             return await this._unitOfWork.LibroRepository.GetById(id);
         }
 
+        public Task<Libro> ObtenerLibroConEditoriales(int isbn)
+        {
+            return this._unitOfWork.LibroRepository.ObtenerLibroConEditoriales(isbn);
+        }
+
         /// <summary>
         /// Método para consultar todos los registros de Libro
         /// </summary>

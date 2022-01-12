@@ -1,0 +1,54 @@
+﻿@using Travel.Core.Entities
+@model Travel.Web.ViewModels.LibroViewModel
+
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sinopsis)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sinopsis)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Editoriales)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EditorialesNavigation.Nombre)
+        </dd>
+    </dl>
+</div>
+
+<h2>Autores</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido 
+            </th>                  
+        </tr>
+    </thead>
+    <tbody>
+@foreach (AutoresHasLibro autoresHasLibro in ViewBag.AutoresRelacionados) {
+        <tr>            
+           <td>@autoresHasLibro.Autores.Nombre</td>           
+           <td>@autoresHasLibro.Autores.Apellidos</td>                 
+        </tr>
+}
+    </tbody>
+</table>
+
+@Html.ActionLink("Ir a Libro","Index","Libro")

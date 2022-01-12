@@ -1,0 +1,35 @@
+﻿@model Travel.Core.Entities.AutoresHasLibro
+
+<h1>Agregar Autor</h1>
+
+<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Titulo
+        </dt>
+        <dd>
+            @ViewBag.Titulo
+        </dd>
+    </dl>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddAutor">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">             
+                <input asp-for="LibrosIsbn" class="form-control" value="@ViewBag.Isbn" readonly hidden/>               
+            </div>
+           <div class="form-group">
+               <select class="form-control" id="selectTipoDocumento" asp-items="ViewBag.items" asp-for="AutoresId">
+                    <option value = null>Seleccione una opción</option>
+                </select>  
+           </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@Html.ActionLink("Ir a Libro","Index","Libro")

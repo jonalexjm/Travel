@@ -9,5 +9,6 @@ namespace Travel.Core.Interfaces.Repositories
 {
     public interface IAutoresHasLibroRepository : IRepository<AutoresHasLibro>
     {
+        Task<List<AutoresHasLibro>> ObtenerAutorHasLibroPorLibroAll();
     }
 }

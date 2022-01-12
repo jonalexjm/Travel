@@ -39,5 +39,6 @@ namespace Travel.Core.Interfaces.Services
         Task<bool> ActualizarLibro(Libro libro);
 
         Task<List<Libro>> ObtenerLibrosConEditoriales();
+        Task<Libro> ObtenerLibroConEditoriales(int isbn);
     }
 }

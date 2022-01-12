@@ -28,7 +28,7 @@ namespace Travel.Infrastructure.Extensions
         public static void AddServices(this IServiceCollection services)
         {
             services.AddTransient<IAutorService, AutorService>();
-            //services.AddTransient<IAutoresHasLibroService, AutoresHasLibroService>();
+            services.AddTransient<IAutoresHasLibroService, AutoresHasLibroService>();
             services.AddTransient<IEditorialService, EditorialService>();
             services.AddTransient<ILibroService, LibroService>();        
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
