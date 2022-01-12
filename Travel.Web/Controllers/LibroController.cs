@@ -20,7 +20,8 @@ namespace Travel.Web.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var libros = await _libroService.ObtenerLibros();
+            //var libros = await _libroService.ObtenerLibros();
+            var libros = await _libroService.ObtenerLibrosConEditoriales();
             return View(libros);
         }
 

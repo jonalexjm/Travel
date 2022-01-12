@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,15 @@ namespace Travel.Infrastructure.Repositories
 {
     public class LibroRepository : BaseRepository<Libro>, ILibroRepository
     {
+        private readonly TravelDbContext travelDbContext;
         public LibroRepository(TravelDbContext context) : base(context)
         {
+            travelDbContext = context;
+        }
+
+        public async Task<List<Libro>> ObtenerLibrosConEditoriales()
+        {
+            return await travelDbContext.Libros.Include(e => e.EditorialesNavigation).ToListAsync();
         }
     }
 }

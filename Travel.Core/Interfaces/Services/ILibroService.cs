@@ -37,5 +37,7 @@ namespace Travel.Core.Interfaces.Services
         /// <param name="libro"> Objeto property para actualizar </param>
         /// <returns> Retorna resutlado de operacion true o false</returns>
         Task<bool> ActualizarLibro(Libro libro);
+
+        Task<List<Libro>> ObtenerLibrosConEditoriales();
     }
 }

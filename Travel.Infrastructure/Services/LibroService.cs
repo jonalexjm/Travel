@@ -71,5 +71,12 @@ namespace Travel.Infrastructure.Services
         {
             return this._unitOfWork.LibroRepository.GetAll().ToList();
         }
+
+        public Task<List<Libro>> ObtenerLibrosConEditoriales()
+        {
+            return this._unitOfWork.LibroRepository.ObtenerLibrosConEditoriales();
+
+
+        }
     }
 }

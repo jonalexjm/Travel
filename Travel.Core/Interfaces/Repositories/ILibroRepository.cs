@@ -9,5 +9,6 @@ namespace Travel.Core.Interfaces.Repositories
 {
     public interface ILibroRepository : IRepository<Libro>
     {
+        Task<List<Libro>> ObtenerLibrosConEditoriales();
     }
 }
